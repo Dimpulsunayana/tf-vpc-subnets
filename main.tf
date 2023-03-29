@@ -9,8 +9,9 @@ resource "aws_vpc" "main" {
 
 resource "aws_vpc_peering_connection" "vpc_peering" {
   peer_owner_id = data.aws_caller_identity.current.account_id
-  peer_vpc_id   = aws_vpc_peering_connection.vpc_peering.id
-  vpc_id        = var.default_vpc_id
+  peer_vpc_id   = var.default_vpc_id
+  vpc_id        = aws_vpc.main.id
+  auto_accept   = true
 
   tags       = merge(
     local.common_tags,
