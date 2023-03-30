@@ -22,4 +22,9 @@ resource "aws_route_table" "r" {
     local.common_tags,
     { Name = "${var.env}-${var.name}-route-${count.index+1}" }
   )
+  lifecycle {
+    ignore_changes = [
+      route,
+    ]
+  }
 }
