@@ -28,7 +28,7 @@ module "private_subnets" {
   main_vpc = aws_vpc.main.id
   peering_id = aws_vpc_peering_connection.vpc_peering.id
   #peering_id = var.peering_id
-  for_each    = var.public_subnets
+  for_each    = var.private_subnets
   default_vpc_id = var.default_vpc_id
   nat_gateway_id = aws_nat_gateway.ngw.id
   # nat_gateway_id = aws_nat_gateway.ngw.id
