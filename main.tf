@@ -19,6 +19,7 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
   )
 }
 
+#route to new vpc from defualt vpc
 resource "aws_route" "r" {
   route_table_id            = data.aws_vpc.default_vpc_id.main_route_table_id
   destination_cidr_block    = var.cidr_block
