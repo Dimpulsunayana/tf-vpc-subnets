@@ -8,5 +8,5 @@ for_each = var.public_subnets
 #  private_subnets = each.value.private_subnets
 cidr_block = each.value.cidr_block
 availability_zone = each.value.availability_zone
-#  name = each.value.name
+  name = each.value.name
 }
