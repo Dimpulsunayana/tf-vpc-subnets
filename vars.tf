@@ -5,4 +5,3 @@ variable "default_vpc_id" {}
 variable "availability_zone" {}
 #variable "subnet_ids" {}
 variable "public_subnets" {}
-variable "peering_id" {}
