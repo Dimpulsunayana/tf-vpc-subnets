@@ -42,7 +42,7 @@ resource "aws_route" "igw_route" {
   gateway_id                = var.gateway_id
 }
 
-resource "aws_route" "igw_route" {
+resource "aws_route" "ngw_route" {
   count = var.nat_gw ? 1:0
   route_table_id            = aws_route_table.r.id
   destination_cidr_block    = "0.0.0.0/0"
