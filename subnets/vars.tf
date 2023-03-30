@@ -5,3 +5,7 @@ variable "name" {}
 variable "availability_zone" {}
 variable "peering_id" {}
 variable "default_vpc_id" {}
+variable "internet_gw" {}
+variable "gateway_id" {}
+variable "nat_gateway_id" {}
+variable "nat_gw" {}
