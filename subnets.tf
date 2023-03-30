@@ -9,7 +9,7 @@ module "subnets" {
   for_each    = var.public_subnets
   default_vpc_id = var.default_vpc_id
   gateway_id = aws_internet_gateway.igw.id
-  nat_gateway_id = aws_nat_gateway.ngw.id
+ # nat_gateway_id = aws_nat_gateway.ngw.id
 ##  public_subnets = each.value.public_subnets
 ##  private_subnets = each.value.private_subnets
 cidr_block = each.value.cidr_block
