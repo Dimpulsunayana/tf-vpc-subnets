@@ -1,9 +1,10 @@
 resource "aws_subnet" "main" {
+  count = length(var.cidr_block)
   vpc_id     = var.main_vpc
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.cidr_block[count.index]
 
   tags       = merge(
     local.common_tags,
-    { Name = "${var.env}-vpc" }
+    { Name = "${var.env}-${var.name}-subnet-${count.index+1}" }
   )
 }
