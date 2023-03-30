@@ -2,7 +2,7 @@ resource "aws_subnet" "main" {
   count = length(var.cidr_block)
   vpc_id     = var.main_vpc
   cidr_block = var.cidr_block[count.index]
-  availability_zone = var.availability_zone
+  availability_zone = var.availability_zone[count.index]
 
   tags       = merge(
     local.common_tags,
